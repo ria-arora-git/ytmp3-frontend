@@ -10,7 +10,7 @@ function App() {
     setDownloading(true);
 
     try {
-      const response = await fetch(`http://localhost:3000/download?url=${encodeURIComponent(url)}`);
+      const response = await fetch(`https://ytmp3-production-e94c.up.railway.app/download?url=${encodeURIComponent(url)}`);
 
       if (!response.ok) {
         throw new Error('Download failed');
