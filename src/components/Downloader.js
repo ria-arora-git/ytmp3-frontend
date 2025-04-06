@@ -14,13 +14,9 @@ const Downloader = () => {
     setError('');
 
     try {
-        const res = await fetch('https://ytmp3-production-e94c.up.railway.app/', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ url }),
-          });
+        const res = await fetch(`https://ytmp3-production-e94c.up.railway.app/download?url=${encodeURIComponent(url)}`);
+
+          
 
 
       if (!res.ok) throw new Error('Download failed. Please check the URL.');
