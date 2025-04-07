@@ -10,7 +10,7 @@ function App() {
     setDownloading(true);
 
     try {
-      const response = await fetch(`http://localhost:3000/download?url=${encodeURIComponent(url)}`);
+      const response = await fetch(`https://ytmp3-production-e94c.up.railway.app/download?url=${encodeURIComponent(url)}`);
 
       if (!response.ok) {
         throw new Error('Download failed');
@@ -33,7 +33,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white">
+   <div className="min-h-screen w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white">
       {/* Navbar */}
       <nav className=" bg-purple-600 p-4 shadow-lg">
         <div className="container mx-auto flex justify-between items-center">
@@ -73,6 +73,7 @@ function App() {
             />
             <button
               type="submit"
+              onClick={handleDownload} 
               disabled={downloading}
               className="bg-indigo-500 text-white rounded-md p-3 w-2/3 sm:w-1/2 hover:bg-blue-600 transition duration-300"
             >
@@ -80,10 +81,7 @@ function App() {
             </button>
           </form>
 
-          {/* Error message */}
-          {error && (
-            <p className="text-red-500 mt-4 text-center">{error}</p>
-          )}
+          
         </div>
       </div>
 
@@ -94,13 +92,10 @@ function App() {
 
         
       </footer>
-    </div>
+    </div> 
   );
 }
 
 export default App;
-
-
-
 
 

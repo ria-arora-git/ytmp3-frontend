@@ -63,7 +63,7 @@ function App() {
           <h2 className="text-3xl font-semibold text-center mb-5 text-indigo-600">Enter YouTube URL</h2>
 
           {/* Input and Button */}
-          <form onSubmit={handleDownload} className="flex flex-col items-center">
+          <form className="flex flex-col items-center">
             <input
               type="text"
               placeholder="Enter YouTube URL..."
